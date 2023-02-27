@@ -57,7 +57,9 @@ class UserController extends Controller {
 
         $user =  User::create(array_merge($request->all(), [
             'password' => bcrypt($request->password),
-            'image' => $fileName
+            'image' => $fileName,
+            'coin' => 0,
+            'exp' => 0
             ])
          );
 
