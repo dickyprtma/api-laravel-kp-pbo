@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Soal extends Model
 {
     use HasFactory;
+    var $table = "soal";
+    var $timestamps = false;
 }

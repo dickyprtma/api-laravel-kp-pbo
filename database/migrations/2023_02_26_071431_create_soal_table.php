@@ -20,7 +20,7 @@ class CreateSoalTable extends Migration
             $table->foreign('tantangan_id')->references('id')->on('tantangan'); 
 
             $table->string('soal');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('option_a');
             $table->string('option_b');
             $table->string('option_c');
