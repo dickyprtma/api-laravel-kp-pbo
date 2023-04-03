@@ -17,8 +17,8 @@ class CreateSiswaTable extends Migration
             $table->id();
             $table->string('nama_lengkap');
             $table->string('nisn')->unique();
-            $table->string('alamat')->unique();
-            $table->date('ttl')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('ttl')->nullable();
             $table->string('no_hp')->unique();
             $table->string('password');
             $table->text('motto')->nullable();
