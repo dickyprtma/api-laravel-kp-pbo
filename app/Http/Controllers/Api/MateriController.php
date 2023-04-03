@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Materi;
+use App\Models\Siswa;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -60,8 +61,17 @@ class MateriController extends Controller
     {
     }
 
-    public function selesaiMateri(Request $request, $id){
-        $user = User::where('id', $id)->first();
+    public function tambahExp(Request $request, $id){
+        $user = Siswa::where('id', $id)->first();
+        if($user){
+            $user->update($request->all());
+            return $this->success($user);
+        }
+        return $this->error("User tidak ditemukan");
+    }
+
+    public function updateCoin(Request $request, $id){
+        $user = Siswa::where('id', $id)->first();
         if($user){
             $user->update($request->all());
             return $this->success($user);

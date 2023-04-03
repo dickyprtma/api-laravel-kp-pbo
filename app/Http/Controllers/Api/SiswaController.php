@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class UserController extends Controller {
+class SiswaController extends Controller {
     // responses
     public function success($data, $message = 'Success'){
         return response()->json([
@@ -25,15 +25,15 @@ class UserController extends Controller {
     }
 
     public function index(){
-        $users = User::orderBy('exp', 'asc')->get();
+        $users = Siswa::orderBy('exp', 'desc')->get();
         return $this->success($users);
     }
 
     public function store(Request $request){
         $validation = Validator::make($request->all(), [
             'nama_lengkap' => 'required',
-            'nisn' => 'required|unique:users',
-            'no_hp' => 'required|unique:users',
+            'nisn' => 'required|unique:siswa',
+            'no_hp' => 'required|unique:siswa',
             'password' => 'required|min:8',
         ]);
 
@@ -55,7 +55,7 @@ class UserController extends Controller {
             $fileName = null;
         }
 
-        $user =  User::create(array_merge($request->all(), [
+        $user =  Siswa::create(array_merge($request->all(), [
             'password' => bcrypt($request->password),
             'image' => $fileName,
             'coin' => 0,
@@ -80,7 +80,7 @@ class UserController extends Controller {
             return $this->error($validation->errors()->first());
         }
 
-        $user = User::where('nisn', $request->nisn)->first();
+        $user = Siswa::where('nisn', $request->nisn)->first();
         if($user){
             if(password_verify($request->password, $user->password)){
                 return $this->success($user);
@@ -92,12 +92,12 @@ class UserController extends Controller {
     }
 
     public function show($id){
-        $user = User::where('id', $id)->first();
+        $user = Siswa::where('id', $id)->first();
         return $this->success($user);
     }
 
     public function update(Request $request, $id){
-        $user = User::where('id', $id)->first();
+        $user = Siswa::where('id', $id)->first();
         if($user){
             $user->update($request->all());
             return $this->success($user);
@@ -106,7 +106,7 @@ class UserController extends Controller {
     }
 
     public function uploadImage(Request $request, $id){
-        $user = User::where('id', $id)->first();
+        $user = Siswa::where('id', $id)->first();
         if($user){
             $fileName = "";
             if($request->image){

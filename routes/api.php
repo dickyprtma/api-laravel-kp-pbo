@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\MateriController;
+use App\Http\Controllers\Api\SiswaController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\SoalController;
 use App\Http\Controllers\TantanganController;
@@ -11,13 +12,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('user', UserController::class);
-Route::post('upload-user/{id}', [UserController::class, "uploadImage"]);
+Route::resource('siswa', SiswaController::class);
+Route::post('upload-siswa/{id}', [SiswaController::class, "uploadImage"]);
 
 Route::resource('materi', MateriController::class);
-Route::post('selesai-materi/{user_id}', [MateriController::class, "selesaiMateri"]);
+Route::post('tambah-exp/{user_id}', [MateriController::class, "tambahExp"]);
+Route::post('update-coin/{user_id}', [MateriController::class, "updateCoin"]);
 
 Route::resource('tantangan', TantanganController::class);
 Route::resource('soal', SoalController::class);
 
-Route::post('login', [UserController::class, "login"]);
+Route::post('login', [SiswaController::class, "login"]);
