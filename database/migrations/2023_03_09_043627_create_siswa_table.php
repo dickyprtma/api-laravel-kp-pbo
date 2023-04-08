@@ -23,7 +23,7 @@ class CreateSiswaTable extends Migration
             $table->string('password');
             $table->text('motto')->nullable();
             $table->integer('exp')->default(0);
-            $table->integer('coin')->default(0);
+            $table->integer('level')->default(0);
             $table->string('image')->nullable();
         });
     }
