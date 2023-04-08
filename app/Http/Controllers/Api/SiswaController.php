@@ -35,6 +35,7 @@ class SiswaController extends Controller {
             'nisn' => 'required|unique:siswa',
             'no_hp' => 'required|unique:siswa',
             'password' => 'required|min:8',
+            'ttl' => 'required'
         ]);
 
         if ($validation->fails()) {
@@ -59,7 +60,8 @@ class SiswaController extends Controller {
             'password' => bcrypt($request->password),
             'image' => $fileName,
             'coin' => 0,
-            'exp' => 0
+            'exp' => 0,
+            'ttl' => $request->ttl
             ])
          );
 

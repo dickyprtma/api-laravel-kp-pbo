@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Materi::create([
+            'level' => 1,
             'nama' => "Dasar dan Aturan",
             'image' => "dasar.png",
             'image_tantangan' => "train1.png",
@@ -26,6 +27,14 @@ class DatabaseSeeder extends Seeder
 
             <h3>Class</h3>
             Merupakan bentuk logis yang menjadi landasan bangun seluruh bahasa pemograman berorientasi object. Class mendefinisikan bentuk dan perilaku object. Class merupakan contoh abstrak dari sebuah object yang telah terbentuk dari proses penyederhanaan. Dengan kata lain class merupakan cikal bakal dari object. Kemudian contoh nyata atau perwujudan dari sebuah object dinamakan instance
+
+<pre style=\"background-color:#f8f8f8; font-size: 12px;\"><br>
+class MyClass{<br/>
+    public static void main(){<br/>
+        System.out.println(\"Hello World\");<br/>
+    }<br/>
+}
+</pre>
 
             <h3>Data dan Method</h3>
             Data merupakan identitas yang berupa variabel yang menjelaskan properti dari class. Metoda adalah sekumpulan instruksi untuk menjalankan data yang diberi nama dan dapat dipanggil dari manapun di dalam program dengan menuliskan nama metoda tersebut.<br>
@@ -108,6 +117,7 @@ class DatabaseSeeder extends Seeder
         // end of materi dasar
 
         Materi::create([
+            'level' => 2,
             'nama' => "Class dan Objek",
             'image' => "class-dan-objek.png",
             'image_tantangan' => "train2.png",
@@ -136,6 +146,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Materi::create([
+            'level' => 3,
             'nama' => "Encapsulation",
             'image' => "encapsulation.png",
             'image_tantangan' => "train3.png",
@@ -160,6 +171,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Materi::create([
+            'level' => 4,
             'nama' => "Inheritance",
             'image' => "inheritance.png",
             'image_tantangan' => "train4.png",
@@ -190,6 +202,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Materi::create([
+            'level' => 5,
             'nama' => "Polimorfisme",
             'image' => "polimorfisme.png",
             'image_tantangan' => "train5.png",
@@ -207,6 +220,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Materi::create([
+            'level' => 6,
             'nama' => "Package",
             'image' => "package.png",
             'image_tantangan' => "train6.png",

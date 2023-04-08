@@ -11,6 +11,7 @@ class CreateMateriTable extends Migration
         Schema::create('materi', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->tinyInteger('level');
             $table->string('image');
             $table->string('image_tantangan');
             $table->text('konten');
