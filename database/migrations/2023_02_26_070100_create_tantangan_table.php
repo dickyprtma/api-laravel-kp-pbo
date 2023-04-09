@@ -20,6 +20,7 @@ class CreateTantanganTable extends Migration
             $table->foreign('materi_id')->references('id')->on('materi'); 
 
             $table->string('nama');
+            $table->string('level');
             
         });
     }
