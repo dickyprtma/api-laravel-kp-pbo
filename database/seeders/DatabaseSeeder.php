@@ -239,11 +239,25 @@ class MyClass{<br/>
 
         Tantangan::create([
             'materi_id' => 1,
+            'level'=> 1,
             'nama' => "Tantangan Class dan Objek Bagian I"
         ]);
 
         Tantangan::create([
             'materi_id' => 1,
+            'level'=> 2,
+            'nama' => "Tantangan Class dan Objek Bagian II"
+        ]);
+
+        Tantangan::create([
+            'materi_id' => 2,
+            'level'=> 1,
+            'nama' => "Tantangan Class dan Objek Bagian II"
+        ]);
+
+        Tantangan::create([
+            'materi_id' => 2,
+            'level'=> 2,
             'nama' => "Tantangan Class dan Objek Bagian II"
         ]);
 
@@ -263,6 +277,50 @@ class MyClass{<br/>
             'soal' => 'OOP adalah?',
             'option_a' => "Object Oriented programming",
             'option_b' => "Oalah orang poh",
+            'option_c' => "Keduanya benar",
+            'option_d' => "Opsi C benar",
+            'jawaban' => 1,
+            'pembahasan' => "Class dapat diibaratkan seperti blueprint atau cetak biru, yang menjadi dasar atau acuan untuk membuat objek nyata. Dengan class kita dapat membuat banyak objek"
+        ]);
+
+        Soal::create([
+            'tantangan_id' => 2,
+            'soal' => 'Nomu?',
+            'option_a' => "Minum",
+            'option_b' => "Oalah orang poh",
+            'option_c' => "Keduanya benar",
+            'option_d' => "Opsi C benar",
+            'jawaban' => 0,
+            'pembahasan' => "Class dapat diibaratkan seperti blueprint atau cetak biru, yang menjadi dasar atau acuan untuk membuat objek nyata. Dengan class kita dapat membuat banyak objek"
+        ]);
+
+        Soal::create([
+            'tantangan_id' => 2,
+            'soal' => 'Yoru',
+            'option_a' => "Object Oriented programming",
+            'option_b' => "Malam",
+            'option_c' => "Keduanya benar",
+            'option_d' => "Opsi C benar",
+            'jawaban' => 1,
+            'pembahasan' => "Class dapat diibaratkan seperti blueprint atau cetak biru, yang menjadi dasar atau acuan untuk membuat objek nyata. Dengan class kita dapat membuat banyak objek"
+        ]);
+        
+        Soal::create([
+            'tantangan_id' => 3,
+            'soal' => 'Nomu?',
+            'option_a' => "Minum",
+            'option_b' => "Oalah orang poh",
+            'option_c' => "Keduanya benar",
+            'option_d' => "Opsi C benar",
+            'jawaban' => 0,
+            'pembahasan' => "Class dapat diibaratkan seperti blueprint atau cetak biru, yang menjadi dasar atau acuan untuk membuat objek nyata. Dengan class kita dapat membuat banyak objek"
+        ]);
+
+        Soal::create([
+            'tantangan_id' => 4,
+            'soal' => 'Yoru',
+            'option_a' => "Object Oriented programming",
+            'option_b' => "Malam",
             'option_c' => "Keduanya benar",
             'option_d' => "Opsi C benar",
             'jawaban' => 1,

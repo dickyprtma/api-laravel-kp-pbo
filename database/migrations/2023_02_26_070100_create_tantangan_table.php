@@ -15,21 +15,13 @@ class CreateTantanganTable extends Migration
     {
         Schema::create('tantangan', function (Blueprint $table) {
             $table->id();
-
             $table->bigInteger('materi_id')->unsigned()->nullable();
             $table->foreign('materi_id')->references('id')->on('materi'); 
-
-            $table->string('nama');
-            $table->string('level');
-            
+            $table->integer('level')->default(1);
+            $table->string('nama');            
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('tantangan');

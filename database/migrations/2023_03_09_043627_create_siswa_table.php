@@ -23,7 +23,8 @@ class CreateSiswaTable extends Migration
             $table->string('password');
             $table->text('motto')->nullable();
             $table->integer('exp')->default(0);
-            $table->integer('level')->default(1);
+            $table->integer('level_materi')->default(1);
+            $table->integer('level_tantangan')->default(1);
             $table->string('image')->nullable();
         });
     }

@@ -56,11 +56,14 @@ class SiswaController extends Controller {
             $fileName = null;
         }
 
+        // harus diisi biar shared preference tidak null
         $user =  Siswa::create(array_merge($request->all(), [
             'password' => bcrypt($request->password),
             'image' => $fileName,
             'coin' => 0,
             'exp' => 0,
+            'level_materi' => 1,
+            'level_tantangan' => 1,
             'ttl' => $request->ttl
             ])
          );
