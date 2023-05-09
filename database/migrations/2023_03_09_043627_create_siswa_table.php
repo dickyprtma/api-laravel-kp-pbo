@@ -14,17 +14,17 @@ class CreateSiswaTable extends Migration
     public function up()
     {
         Schema::create('siswa', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned()->autoIncrement();
             $table->string('nama_lengkap');
             $table->string('nisn')->unique();
             $table->string('alamat')->nullable();
             $table->string('ttl')->nullable();
-            $table->string('no_hp')->unique();
+            $table->string('no_hp',20)->unique();
             $table->string('password');
             $table->text('motto')->nullable();
             $table->integer('exp')->default(0);
-            $table->integer('level_materi')->default(1);
-            $table->integer('level_tantangan')->default(1);
+            $table->integer('level_materi')->default(1)->length(2);
+            $table->integer('level_tantangan')->default(1)->length(2);
             $table->string('image')->nullable();
         });
     }

@@ -14,9 +14,9 @@ class CreateSoalTable extends Migration
     public function up()
     {
         Schema::create('soal', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned()->autoIncrement()->length(2);
 
-            $table->bigInteger('tantangan_id')->unsigned()->nullable();
+            $table->integer('tantangan_id')->unsigned()->nullable()->length(2);
             $table->foreign('tantangan_id')->references('id')->on('tantangan'); 
 
             $table->string('soal');
@@ -25,7 +25,7 @@ class CreateSoalTable extends Migration
             $table->string('option_b');
             $table->string('option_c');
             $table->string('option_d');
-            $table->tinyInteger('jawaban');
+            $table->tinyInteger('jawaban')->length(1);
             $table->text('pembahasan');
 
         });

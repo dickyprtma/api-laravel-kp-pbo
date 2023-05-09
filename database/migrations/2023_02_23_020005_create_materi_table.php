@@ -9,8 +9,8 @@ class CreateMateriTable extends Migration
     public function up()
     {
         Schema::create('materi', function (Blueprint $table) {
-            $table->id();
-            $table->integer('level')->default(1);
+            $table->integer('id')->unsigned()->autoIncrement()->length(2);
+            $table->integer('level')->default(1)->length(2);
             $table->string('nama');
             $table->string('image');
             $table->string('image_tantangan');

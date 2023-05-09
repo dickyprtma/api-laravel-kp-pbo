@@ -14,10 +14,10 @@ class CreateTantanganTable extends Migration
     public function up()
     {
         Schema::create('tantangan', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('materi_id')->unsigned()->nullable();
+            $table->integer('id')->unsigned()->autoIncrement()->length(2);
+            $table->integer('materi_id')->unsigned()->nullable()->length(2);
             $table->foreign('materi_id')->references('id')->on('materi'); 
-            $table->integer('level')->default(1);
+            $table->integer('level')->default(1)->length(2);
             $table->string('nama');            
         });
     }
