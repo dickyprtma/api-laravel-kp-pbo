@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Materi::create([
             'level' => 1,
-            'nama' => "Dasar dan Aturan",
+            'nama' => "",
             'image' => "dasar.png",
             'image_tantangan' => "train1.png",
             'konten'=> "
