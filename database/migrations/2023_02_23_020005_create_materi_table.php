@@ -14,7 +14,7 @@ class CreateMateriTable extends Migration
             $table->string('nama');
             $table->string('image');
             $table->string('image_tantangan');
-            $table->text('konten');
+            $table->text('konten')->nullable();
         });
     }
 

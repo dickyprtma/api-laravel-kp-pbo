@@ -93,7 +93,7 @@ class SiswaController extends Controller {
                 return $this->error('Password salah');
             }
         }
-        return $this->error("NIK atau password salah");
+        return $this->error("NISN atau password salah");
     }
 
     public function show($id){
